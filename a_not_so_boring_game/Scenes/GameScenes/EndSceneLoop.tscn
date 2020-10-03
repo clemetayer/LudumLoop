@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/Buttons/MainMenuDefault.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Buttons/MainMenuHover.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Buttons/MainMenuPressed.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Scenes/EndSceneLoop.gd" type="Script" id=4]
+
+[node name="EndSceneLoop" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -514.0
+margin_top = -304.0
+margin_right = 522.0
+margin_bottom = 299.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -199.0
+margin_top = -145.0
+margin_bottom = -66.0
+rect_scale = Vector2( 2, 2 )
+bbcode_enabled = true
+bbcode_text = "[center][rainbow freq=0.2 sat=10 val=20]
+ [wave amp=50 freq=2]Wow, you won ![/wave] 
+[wave amp=50 freq=2]Amazing ! [/wave]
+[tornado radius=5 freq=2]:)[/tornado][/rainbow][/center]"
+text = "
+ Wow, you won ! 
+Amazing ! 
+:)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = -123.808
+margin_top = 62.076
+margin_right = 126.192
+margin_bottom = 162.076
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

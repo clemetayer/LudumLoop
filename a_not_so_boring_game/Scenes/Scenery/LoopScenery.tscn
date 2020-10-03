@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Scenery/Grass.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Scenery/Sky.png" type="Texture" id=2]
+
+[node name="LoopScenery" type="Node2D"]
+
+[node name="Sky" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Grass" type="Sprite" parent="."]
+position = Vector2( 0, 290 )
+texture = ExtResource( 1 )

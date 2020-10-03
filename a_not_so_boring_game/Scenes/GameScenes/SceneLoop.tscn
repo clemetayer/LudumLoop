@@ -1,0 +1,112 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/Characters/BasicMonster.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Scenery/LoopScenery.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Buttons/HitButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Animations/Slash/Slash0004.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Animations/Slash/Slash0002.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Animations/Slash/Slash0003.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Animations/Slash/Slash0005.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Animations/Slash/Slash0000.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Animations/Slash/Slash0001.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/Scenes/SceneLoop.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/UI/DialogBox.tscn" type="PackedScene" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Slash",
+"speed": 15.0
+} ]
+
+[node name="SceneLoop" type="Node2D"]
+script = ExtResource( 10 )
+NARRATOR_DIALOG = [ [ "Welcome, player!", "In this game, you will fight frightening monsters to level up!", "You might be thinking [shake rate=5 level=10]\"Help, this is already too complicated :(\"[/shake]", "But don't worry, this is really simple!", "Just click on the  [color=blue]\"Hit\" button[/color] until the ennemy is defeated!", "Here, try on this guy!" ], [ "[shake rate=5 level=10][rainbow freq=0.2 sat=10 val=20]Wow! Incredible![/rainbow][/shake]", "You just levelled up!", "I hope you're enjoying this gameplay!", "There are 9 more monsters ahead!", "This will be tough, but i'm sure you can do it :) " ], [ "You're really good at this game!", "Keep going!" ], [ "[rainbow freq=0.2 sat=10 val=20][tornado radius=5 freq=2]Woohoo ! Fun![/tornado][/rainbow]" ], [ "..." ], [ "Hm? Oh! Sorry, i was asleep for a second ...", "You're halfway done! [shake rate=5 level=10]Amazing![/shake]" ], [ "Level 7 already???", "These monsters doesn't stand a chance!" ], [ "..." ], [ "Oh, sorry, I was asleep again...", "2 more left! [shake rate=5 level=10]What an adventure![/shake]" ], [ "This is the last one!", "[shake rate=5 level=10]You can do it![/shake]" ] ]
+MONSTERS = [ "BasicMonster1", "BasicMonster2", "BasicMonster3", "BasicMonster4", "BasicMonster5", "BasicMonster6", "BasicMonster7", "BasicMonster8", "BasicMonster9", "BasicMonster10" ]
+
+[node name="LoopScenery" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1.16638, 1.16635 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="LevelDialog" type="Polygon2D" parent="."]
+position = Vector2( -434.191, -272.539 )
+scale = Vector2( 2, 2 )
+color = Color( 1, 1, 1, 0 )
+polygon = PoolVector2Array( 0.0407662, 0.0143046, 60.6816, 0.0384521, 60.6307, 37.2543, 0.159534, 37.1805 )
+
+[node name="Level" type="RichTextLabel" parent="LevelDialog"]
+margin_right = 80.0
+margin_bottom = 36.0
+bbcode_enabled = true
+bbcode_text = "[center][color=lime][tornado radius=5 freq=2]
+Level : 0[/tornado][/color][/center]"
+text = "
+Level : 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Monsters" type="Node2D" parent="."]
+
+[node name="BasicMonster1" parent="Monsters" instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 0, 50 )
+
+[node name="BasicMonster2" parent="Monsters" instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 0, 50 )
+dialog = [ "Here we go again..." ]
+
+[node name="BasicMonster3" parent="Monsters" instance=ExtResource( 1 )]
+visible = false
+dialog = [ "I have a strange feeling of déjà vu ..." ]
+
+[node name="BasicMonster4" parent="Monsters" instance=ExtResource( 1 )]
+visible = false
+dialog = [ "I'm frightening, boo !" ]
+
+[node name="BasicMonster5" parent="Monsters" instance=ExtResource( 1 )]
+visible = false
+dialog = [ "Wait before clicking on this button !", "Okay, hear me out", "I know you're probably bored", "I want to get out of this hellish gameplay loop, and you too, probably !", "Fortunately, i have a way out !", "Just type [wave amp=25 freq=2]ludum[/wave], press this [color=blue]\"Hit\" button[/color], and restart." ]
+
+[node name="BasicMonster6" parent="Monsters" instance=ExtResource( 1 )]
+visible = false
+dialog = [ "How many slimes have you defeated ?", "5 ? Impressive, i guess ..." ]
+
+[node name="BasicMonster7" parent="Monsters" instance=ExtResource( 1 )]
+visible = false
+dialog = [ "Still not bored ?" ]
+
+[node name="BasicMonster8" parent="Monsters" instance=ExtResource( 1 )]
+visible = false
+dialog = [ "You can still type [wave amp=25 freq=2]ludum[/wave] to escape this hell..." ]
+
+[node name="BasicMonster9" parent="Monsters" instance=ExtResource( 1 )]
+visible = false
+dialog = [ "My only purpose is to lose health, help." ]
+
+[node name="BasicMonster10" parent="Monsters" instance=ExtResource( 1 )]
+visible = false
+dialog = [ "I'm the last one...", "Oh no, i suppose ..." ]
+
+[node name="HitButton" parent="." instance=ExtResource( 3 )]
+margin_left = -50.0
+margin_top = 195.426
+margin_bottom = 245.426
+rect_scale = Vector2( 2, 2 )
+
+[node name="SlashAnimation" type="AnimatedSprite" parent="."]
+position = Vector2( -20.8715, 31.9212 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "Slash"
+
+[node name="DialogBox" parent="." instance=ExtResource( 12 )]
+position = Vector2( -162.531, -284.529 )
+scale = Vector2( 2, 2 )
+[connection signal="pressed" from="HitButton" to="." method="_on_HitButton_pressed"]
+[connection signal="animation_finished" from="SlashAnimation" to="." method="_on_SlashAnimation_animation_finished"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Buttons/HitButtonHover.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Buttons/HitButtonPressed.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Buttons/HitButtonDefault.png" type="Texture" id=3]
+
+[node name="HitButton" type="TextureButton"]
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
