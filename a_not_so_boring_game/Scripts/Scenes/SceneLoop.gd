@@ -4,6 +4,7 @@ export var NARRATOR_DIALOG = []
 export var MONSTERS = []
 
 var EndSceneLoop = preload("res://Scenes/GameScenes/EndSceneLoop.tscn")
+var EndSceneLoopAlternative = preload("res://Scenes/GameScenes/EndSceneLoopAltenative.tscn")
 
 var lvl = 1
 var dialogIndex = 0
@@ -35,7 +36,13 @@ func _input(event):
 
 func nextMonster():
 	if(monsterIndex >= 9):
-		get_tree().change_scene_to(EndSceneLoop)
+		var data = Global.loadSave()
+		var cheatValue = data.cheated
+		if(cheatValue):
+			get_tree().change_scene_to(EndSceneLoopAlternative)
+		else:
+			get_tree().change_scene_to(EndSceneLoop)
+			
 	else:
 		monsterIndex += 1
 		lvl += 1

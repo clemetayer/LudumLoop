@@ -22,7 +22,7 @@ animations = [ {
 
 [node name="SceneLoop" type="Node2D"]
 script = ExtResource( 10 )
-NARRATOR_DIALOG = [ [ "Welcome, player!", "In this game, you will fight frightening monsters to level up!", "You might be thinking [shake rate=5 level=10]\"Help, this is already too complicated :(\"[/shake]", "But don't worry, this is really simple!", "Just click on the  [color=blue]\"Hit\" button[/color] until the ennemy is defeated!", "Here, try on this guy!" ], [ "[shake rate=5 level=10][rainbow freq=0.2 sat=10 val=20]Wow! Incredible![/rainbow][/shake]", "You just levelled up!", "I hope you're enjoying this gameplay!", "There are 9 more monsters ahead!", "This will be tough, but i'm sure you can do it :) " ], [ "You're really good at this game!", "Keep going!" ], [ "[rainbow freq=0.2 sat=10 val=20][tornado radius=5 freq=2]Woohoo ! Fun![/tornado][/rainbow]" ], [ "..." ], [ "Hm? Oh! Sorry, i was asleep for a second ...", "You're halfway done! [shake rate=5 level=10]Amazing![/shake]" ], [ "Level 7 already???", "These monsters doesn't stand a chance!" ], [ "..." ], [ "Oh, sorry, I was asleep again...", "2 more left! [shake rate=5 level=10]What an adventure![/shake]" ], [ "This is the last one!", "[shake rate=5 level=10]You can do it![/shake]" ] ]
+NARRATOR_DIALOG = [ [ "Welcome, player!", "In this game, you will fight frightening monsters to level up!", "You might be thinking [shake rate=5 level=10]\"Help, this is already too complicated :(\"[/shake]", "But don't worry, this is really simple!", "Just click on the  [color=blue]\"Hit\" button[/color] until the ennemy is defeated!", "Here, try on this guy!" ], [ "[shake rate=5 level=10][rainbow freq=0.2 sat=10 val=20]Wow! Incredible![/rainbow][/shake]", "You just levelled up!", "I hope you're enjoying this gameplay!", "There are 9 more monsters ahead!", "This will be tough, but i'm sure you can do it :) " ], [ "You're really good at this game!", "Keep going!" ], [ "[rainbow freq=0.2 sat=10 val=20][tornado radius=5 freq=2]Woohoo ! Fun![/tornado][/rainbow]" ], [ "..." ], [ "Hm? Oh! Sorry, i was asleep for a second ...", "You're halfway done! [shake rate=5 level=10]Amazing![/shake]" ], [ "Level 7 already???", "These monsters don't stand a chance!" ], [ "..." ], [ "Oh, sorry, I was asleep again...", "2 more left! [shake rate=5 level=10]What an adventure![/shake]" ], [ "This is the last one!", "[shake rate=5 level=10]You can do it![/shake]" ] ]
 MONSTERS = [ "BasicMonster1", "BasicMonster2", "BasicMonster3", "BasicMonster4", "BasicMonster5", "BasicMonster6", "BasicMonster7", "BasicMonster8", "BasicMonster9", "BasicMonster10" ]
 
 [node name="LoopScenery" parent="." instance=ExtResource( 2 )]
@@ -79,7 +79,7 @@ dialog = [ "How many slimes have you defeated ?", "5 ? Impressive, i guess ..." 
 
 [node name="BasicMonster7" parent="Monsters" instance=ExtResource( 1 )]
 visible = false
-dialog = [ "Still not bored ?" ]
+dialog = [ "Recycling is important!" ]
 
 [node name="BasicMonster8" parent="Monsters" instance=ExtResource( 1 )]
 visible = false
