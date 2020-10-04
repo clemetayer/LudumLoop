@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Scenery/Cave.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Scenery/CaveDown.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Scenery/CaveUp.png" type="Texture" id=3]
+
+[node name="CaveBackground" type="ParallaxBackground"]
+
+[node name="UpBackground" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 800, 0 )
+
+[node name="Sprite" type="Sprite" parent="UpBackground"]
+texture = ExtResource( 3 )
+
+[node name="MidBackground" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 800, 0 )
+
+[node name="Sprite" type="Sprite" parent="MidBackground"]
+texture = ExtResource( 1 )
+
+[node name="DownBackground" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 800, 0 )
+
+[node name="Sprite" type="Sprite" parent="DownBackground"]
+texture = ExtResource( 2 )

@@ -83,7 +83,7 @@ dialog = [ "Still not bored ?" ]
 
 [node name="BasicMonster8" parent="Monsters" instance=ExtResource( 1 )]
 visible = false
-dialog = [ "You can still type [wave amp=25 freq=2]ludum[/wave] to escape this hell..." ]
+dialog = [ "You can still type [wave amp=25 freq=2]ludum[/wave] to escape this hell, but don't forget to restart !" ]
 
 [node name="BasicMonster9" parent="Monsters" instance=ExtResource( 1 )]
 visible = false

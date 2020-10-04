@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Scenery/TrueWinScreen.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Buttons/MainMenuHover.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Buttons/MainMenuPressed.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Buttons/MainMenuDefault.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Scenes/TrueWinScreen.gd" type="Script" id=5]
+
+[node name="TrueWinScreen" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.57, 0.57 )
+texture = ExtResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -293.0
+margin_top = -278.895
+margin_right = 0.999817
+margin_bottom = -153.895
+rect_scale = Vector2( 2, 2 )
+bbcode_enabled = true
+bbcode_text = "[center][rainbow freq=0.2 sat=10 val=20][wave amp=50 freq=2]
+Congratulations !
+
+You managed to beat the narrator and free the slimes !
+
+They now can live a pointless, yet, happy life ![/wave][/rainbow][/center]"
+text = "
+Congratulations !
+
+You managed to beat the narrator and free the slimes !
+
+They now can live a pointless, yet, happy life !"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = -125.0
+margin_right = 125.0
+margin_bottom = 100.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

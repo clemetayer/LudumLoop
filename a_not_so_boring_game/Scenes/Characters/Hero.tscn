@@ -1,0 +1,68 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Sprites/Animations/Hero/WalkFront0001.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Animations/Hero/WalkRight0000.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Animations/Hero/WalkLeft0001.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Animations/Hero/WalkFront0000.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Animations/Hero/WalkBack0000.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Animations/Hero/WalkRight0001.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Animations/Hero/WalkBack0001.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Animations/Hero/WalkLeft0000.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/Characters/Hero.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/UI/HealthBar.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/UI/DialogBox.tscn" type="PackedScene" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "Front",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Back",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.4958, 22.8903 )
+
+[node name="Hero" type="KinematicBody2D" groups=[
+"Player",
+]]
+script = ExtResource( 9 )
+DIALOG = [ [ "Where am i ? What am i doing here ?", "And who are you ?" ], [ "Why am i doing this anyway ? They should be free !" ], [ "Wait, wh-", "I don't even know how to move !" ], [ "Still! I don't even have a weapon!", "That's not fair !!!" ] ]
+
+[node name="HealthBar" parent="." instance=ExtResource( 10 )]
+margin_left = -25.0
+margin_top = -40.0
+margin_right = -25.0
+margin_bottom = -40.0
+rect_scale = Vector2( 0.25, 0.25 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"Player",
+]]
+position = Vector2( 0.451874, 1.35562 )
+shape = SubResource( 2 )
+
+[node name="DialogBox" parent="." instance=ExtResource( 11 )]
+position = Vector2( -80, -130 )
